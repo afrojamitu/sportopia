@@ -14,6 +14,8 @@ const PopularInstructors = () => {
                     sports.slice(0, 6).map(sport => <Instructor key={sport._id} sport={sport}></Instructor>)
                 }
             </div>
+
+            
         </div>
     );
 };
