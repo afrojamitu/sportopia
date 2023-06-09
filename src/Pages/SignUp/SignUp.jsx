@@ -78,13 +78,19 @@ const SignUp = () => {
 
                         <div className='grid gap-2 text-lg'>
                             <label>Password</label>
-                            <input {...register("password", { required: true, minLength: 8 })} className='w-full py-2 rounded px-3' type="password" name="password" id="" placeholder='Type Your Password' />
-                            {errors.password && <span className='text-red-500 text-sm'>This field is required</span>}
+                            <input {...register("password", { required: true, 
+                                minLength: 8,
+                                pattern: /(?=.*[A-Z])(?=.*[0-9].*[0-9])(?=.*[a-z])/
+                                })} className='w-full py-2 rounded px-3' type="password" name="password" id="" placeholder='Type Your Password' />
+                            {errors.password?.type === 'required' && <span className='text-red-500 text-sm'>This field is required</span>}
+                            {errors.password?.type === 'minLength' && <span className='text-red-500 text-sm'>Password must have 8 character.</span>}
+                            {errors.password?.type === 'pattern' && <span className='text-red-500 text-sm'>Password must have 1 uppercase, 1 lowercase and 2 number.</span>}
+                            
                         </div>
 
                         <div className='grid gap-2 text-lg'>
                             <label>Confirm Password</label>
-                            <input {...register("confirmPassword", { required: true, minLength: 8 })} className='w-full py-2 rounded px-3' type="confirmPassword" name="password" id="" placeholder='Re-Type Your Password' />
+                            <input {...register("confirmPassword", { required: true, minLength: 8 })} className='w-full py-2 rounded px-3' type="password" name="confirmPassword" id="" placeholder='Re-Type Your Password' />
                         </div>
 
 

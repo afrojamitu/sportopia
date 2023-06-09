@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
+import { AuthContext } from '../Provider/Authprovider';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
 
     const navlinks = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link>Classes</Link></li>
         <li><Link>Dashboard</Link></li>
     </>
+
+    const handleLogout = () =>{
+        logOut()
+        .then(() =>{})
+        .then(error => console.log(error))
+    }
 
     return (
         <div className='shadow-md bg-base-100 w-full fixed z-10 bg-opacity-60'>
@@ -31,7 +39,12 @@ const Header = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <Link to='/login' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>Login</Link>
+                        { 
+                        user ? < >
+                        <h1 className="text-xl font-semibold text-green-700 px-4">{user?.displayName}</h1>
+                        <button onClick={handleLogout} className="px-3 py-1 rounded bg-green-700 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>LogOut</button>
+                        </> :
+                            <Link to='/login' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>Login</Link>}
                     </div>
                 </div>
             </div>

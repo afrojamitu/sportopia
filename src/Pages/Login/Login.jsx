@@ -11,7 +11,6 @@ import './Login.css'
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
-    const [disabled, setDisabled] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -49,12 +48,6 @@ const Login = () => {
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
-        if (validateCaptcha(user_captcha_value)) {
-            setDisabled(false)
-        }
-        else {
-            setDisabled(true)
-        }
     }
 
     return (
@@ -91,7 +84,7 @@ const Login = () => {
 
 
                         <div>
-                            <input disabled={disabled} type="submit" value="Login" className='w-full py-2 bg-green-700 hover:opacity-80 rounded font-bold text-white' style={{ transition: '.5s' }} />
+                            <input type="submit" value="Login" className='w-full py-2 bg-green-700 hover:opacity-80 rounded font-bold text-white' style={{ transition: '.5s' }} />
                         </div>
 
                         <p className='text-green-700 text-center'>New Here? <Link to='/signup' className='hover:underline'>Create an Account</Link></p>
