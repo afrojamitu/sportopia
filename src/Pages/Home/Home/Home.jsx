@@ -2,14 +2,21 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import Classes from '../Classes/Classes';
+import Instagram from '../Instagram/Instagram';
+import Reviews from '../Reviews/Reviews';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home - Sportopia Summer Camp</title>
+            </Helmet>
             <Banner></Banner>
             <Classes></Classes>
             <PopularInstructors></PopularInstructors>
-            <h1>Home page</h1>
+            <Reviews></Reviews>
+            <Instagram></Instagram>
         </div>
     );
 };
