@@ -1,10 +1,10 @@
 import React from 'react';
-import useSports from '../../../hooks/useSports';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
+import useClass from '../../../hooks/useClass';
 
 const Classes = () => {
-    const [sports] = useSports()
+    const [classes] = useClass()
 
     return (
         <div className='md:w-10/12 md:mx-auto mx-5 my-10'>
@@ -13,7 +13,7 @@ const Classes = () => {
 
             <div className='grid md:grid-cols-3 gap-3 md:gap-10 justify-center items-center my-8'>
                 {
-                    sports.slice(0, 6).map(sport => <>
+                    classes.slice(0, 6).map(sport => <>
                         <div className='flex flex-col items-center rounded-lg border-2 pb-5 hover:scale-105' style={{ transition: '0.5s' }}
                         >
                             <img className='w-full h-48 rounded-t-lg' src={sport.banner} alt="" />
@@ -30,6 +30,7 @@ const Classes = () => {
                                         value={sport.rating}
                                     />
                                     {sport.rating}</p>
+                                <button className="px-3 py-1 mt-5 rounded bg-green-700 hover:opacity-70 font-semibold text-lg text-white" style={{ transition: '.5s' }}>Select</button>
                             </div>
                         </div>
                     </>)

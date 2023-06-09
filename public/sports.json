@@ -102,5 +102,31 @@
         "rating": 4.5,
         "banner": "https://i.ibb.co/0MsC7PV/learning-skills.jpg",
         "seats": 20
+    },
+    {
+        "instructor": "Jason Wilson",
+        "image": "https://i.ibb.co/GcW199W/Screenshot-19-270x270.jpg",
+        "email": "jason@gmail.com",
+        "bio": "Jason Wilson is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner. Her creative teaching methods and ability to connect with students have earned her recognition and appreciation from both students and parents. With a commitment to lifelong learning, Sarah continually seeks professional development opportunities to enhance her teaching skills. She is an advocate for student success and strives to instill a love for learning in every child she teaches.",
+        "totalClass": 95,
+        "students": 272,
+        "class": "Learn Runner Up and Become Champion.",
+        "price": 150,
+        "rating": 4.5,
+        "banner": "https://i.ibb.co/qgz8mpT/images.jpg",
+        "seats": 20
+    },
+    {
+        "instructor": "Mr Steve",
+        "image": "https://i.ibb.co/884K1bW/images.jpg",
+        "email": "steve@gmail.com",
+        "bio": "Mr Steve is a passionate and dedicated teacher with over a decade of experience in the education field. Her enthusiasm for teaching is contagious, creating an engaging and inclusive learning environment for her students. Sarah believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner. Her creative teaching methods and ability to connect with students have earned her recognition and appreciation from both students and parents. With a commitment to lifelong learning, Sarah continually seeks professional development opportunities to enhance her teaching skills. She is an advocate for student success and strives to instill a love for learning in every child she teaches.",
+        "totalClass": 76,
+        "students": 234,
+        "class": "Learn Baloon Jump and win a Competition.",
+        "price": 100,
+        "rating": 4.5,
+        "banner": "https://i.ibb.co/XDHDkqC/istockphoto-466335022-612x612.jpg",
+        "seats": 10
     }
 ]

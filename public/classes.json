@@ -1,0 +1,92 @@
+[
+    {
+        "instructor": "Mr Steve",
+        "students": 234,
+        "class": "Learn Football and win a tournament.",
+        "price": 100,
+        "rating": 4.5,
+        "banner": "https://i.ibb.co/gVs9QGV/download.jpg",
+        "seats": 10
+    },
+    {
+        "instructor": "Sarah Thompson",
+        "students": 356,
+        "class": "Learn Badminton and win a tournament.",
+        "price": 60,
+        "rating": 5,
+        "banner": "https://i.ibb.co/hRcy9jy/istockphoto-1129192282-612x612.jpg",
+        "seats": 15
+    },
+    {
+        "instructor": "David Johnson",
+        "students": 146,
+        "class": "Learn Tennis Timmy and Become Champion.",
+        "price": 80,
+        "rating": 4,
+        "banner": "https://i.ibb.co/vzzcRtF/BTAkidgroup.jpg",
+        "seats": 20
+    },
+    {
+        "instructor": "David Johnson",
+        "students": 146,
+        "class": "Learn Tennis Timmy and Become Champion.",
+        "price": 80,
+        "rating": 4,
+        "banner": "https://i.ibb.co/vzzcRtF/BTAkidgroup.jpg",
+        "seats": 8
+    },
+    {
+        "instructor": "Sofia Ramirez",
+        "students": 246,
+        "class": "Learn Table Tennis and Become Champion.",
+        "price": 65,
+        "rating": 5,
+        "banner": "https://i.ibb.co/T8CZJW9/childrens-competitions.webp",
+        "seats": 5
+    },
+    {
+        "instructor": "Daniel Morgan",
+        "students": 86,
+        "class": "Learn Swimming and Become Champion.",
+        "price": 65,
+        "rating": 5,
+        "banner": "https://i.ibb.co/9qG6ysj/happy-childrens-at-swimming-pool-SBI-300812863-1-1024x683.webp",
+        "seats": 12
+    },
+    {
+        "instructor": "Megan Mitchell",
+        "students": 135,
+        "class": "Learn Rope Jumping and Become Champion.",
+        "price": 65,
+        "rating": 3.5,
+        "banner": "https://i.ibb.co/gzPbY5T/jump-rope-games-for-kids.jpg",
+        "seats": 15
+    },
+    {
+        "instructor": "Jason Wilson",
+        "students": 272,
+        "class": "Learn Cricket and Become Champion.",
+        "price": 150,
+        "rating": 4.5,
+        "banner": "https://i.ibb.co/0MsC7PV/learning-skills.jpg",
+        "seats": 20
+    },
+    {
+        "instructor": "Jason Wilson",
+        "students": 272,
+        "class": "Learn Runner Up and Become Champion.",
+        "price": 150,
+        "rating": 4.5,
+        "banner": "https://i.ibb.co/qgz8mpT/images.jpg",
+        "seats": 20
+    },
+    {
+        "instructor": "Mr Steve",
+        "students": 234,
+        "class": "Learn Baloon Jump and win a Competition.",
+        "price": 100,
+        "rating": 4.5,
+        "banner": "https://i.ibb.co/XDHDkqC/istockphoto-466335022-612x612.jpg",
+        "seats": 10
+    }
+]
