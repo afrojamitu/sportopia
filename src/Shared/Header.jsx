@@ -8,7 +8,8 @@ const Header = () => {
 
     const navlinks = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link>Classes</Link></li>
+        <li><Link to='/classes'>Classe's</Link></li>
+        <li><Link to='/Instructors'>Instructor's</Link></li>
         <li><Link>Dashboard</Link></li>
     </>
 
