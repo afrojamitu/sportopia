@@ -5,7 +5,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import './Login.css'
+import './Login.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 
@@ -13,6 +14,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [hide, setHide] = useState(false);
 
     const from = location.state?.from?.pathname || '/';
 
@@ -69,9 +71,12 @@ const Login = () => {
                             <input className='w-full py-2 rounded-lg px-3 border-2' type="email" name="email" id="" placeholder='Type Your Email' required />
                         </div>
 
-                        <div className='grid gap-2 text-lg'>
+                        <div className='grid gap-2 text-lg relative'>
                             <label>Password</label>
-                            <input className='w-full py-2 rounded-lg px-3 border-2' type="password" name="password" id="" placeholder='Type Your Password' required />
+                            <input className='w-full py-2 rounded-lg px-3 border-2' type={hide ? 'text' : 'password'} name="password" id="" placeholder='Type Your Password' required />
+                            <button onClick={() => setHide(!hide)} className="absolute top-12 right-3">
+                                {hide ? <FaEye className="text-2xl"/> : <FaEyeSlash className="text-2xl"/>}
+                            </button>
                         </div>
 
                         <div className='grid gap-2 text-lg py-2 w-full'>
