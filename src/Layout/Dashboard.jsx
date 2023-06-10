@@ -34,7 +34,7 @@ const Dashboard = () => {
                         <>
                         {/* <span><img className='mt-10' src="../assets/logo.png" alt="" /></span> */}
                             <li><NavLink to='/dashboard/userhome'><FaHome/> User Home</NavLink></li>
-                            <li><NavLink to='/dashboard/myclasses'><FaShoppingCart/> My Cart <span className="badge badge-secondary">{selectedClass?.length || 0}</span></NavLink>
+                            <li><NavLink to='/dashboard/myclasses'><FaShoppingCart/> My Cart</NavLink>
                             </li>
                             <li><NavLink to='/dashboard/reservation'><FaBookmark/> My Selected Classes</NavLink></li>
                             <li><NavLink to='/dashboard/reservation'><FaCheckCircle/> My Enrolled Classes</NavLink></li>

@@ -7,14 +7,14 @@ import { useNavigate } from 'react-router-dom';
 import useSelectedClass from '../../hooks/useSelectedClass';
 
 const ClassCard = ({item}) => {
-    const {banner, instructor, students, seats, rating, _id} = item;
+    const {banner, className, instructor, students, price, seats, rating, _id} = item;
     const {user} = useContext(AuthContext);
     const [, refetch] = useSelectedClass()
     const navigate = useNavigate()
 
     const handleAddClass = (item) =>{
 
-        const bookClass = {classId: _id, banner, instructor, email: user.email}
+        const bookClass = {classId: _id, className,price, seats, banner, instructor, email: user.email}
         if(user && user.email){
             fetch('http://localhost:5000/carts',{
                 method: 'POST',
