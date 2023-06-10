@@ -18,12 +18,12 @@ const Reviews = () => {
 
     return (
         <div className='review-bg'>
-            <div className='w-8/12 mx-auto my-16 p-20'>
+            <div className='md:w-8/12 mx-auto my-16 p-20'>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 
                     {
                         reviews.map(review => <SwiperSlide key={review._id}>
-                            <div className='w-9/12 mx-auto flex flex-col items-center text-center gap-4'>
+                            <div className='md:w-9/12 md:mx-auto mx-5 flex flex-col items-center text-center gap-4'>
                                 <img className='w-16 my-2' src="https://i.ibb.co/kVnbvfB/images-removebg-preview-1.png" alt="" />
                                 <Rating
                                     style={{ maxWidth: 150 }}
