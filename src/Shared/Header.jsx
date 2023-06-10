@@ -10,7 +10,7 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/classes'>Classe's</Link></li>
         <li><Link to='/instructors'>Instructor's</Link></li>
-        <li><Link>Dashboard</Link></li>
+        <li><Link to='/dashboard/myclasses'>Dashboard</Link></li>
     </>
 
     const handleLogout = () =>{

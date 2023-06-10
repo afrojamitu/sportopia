@@ -4,20 +4,24 @@ import { AuthContext } from '../../Provider/Authprovider';
 import { Rating } from '@smastrom/react-rating';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useSelectedClass from '../../hooks/useSelectedClass';
 
 const ClassCard = ({item}) => {
-    const {banner, instructor, students, seats, rating} = item;
+    const {banner, instructor, students, seats, rating, _id} = item;
     const {user} = useContext(AuthContext);
+    const [, refetch] = useSelectedClass()
     const navigate = useNavigate()
 
     const handleAddClass = (item) =>{
-        if(user){
+
+        const bookClass = {classId: _id, banner, instructor, email: user.email}
+        if(user && user.email){
             fetch('http://localhost:5000/carts',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(item)
+                body: JSON.stringify(bookClass)
             })
             .then(res => res.json())
             .then(data => {
@@ -30,6 +34,7 @@ const ClassCard = ({item}) => {
                         showConfirmButton: false,
                         timer: 1500
                       })
+                      refetch();
                 }
             })
         }
@@ -68,7 +73,8 @@ const ClassCard = ({item}) => {
                                         {rating}</p>
                                     {seats === 0 ? <button className="px-3 py-1 mt-5 rounded bg-slate-500 font-semibold text-lg" style={{ transition: '.5s' }} disabled>Select</button> :
                                     
-                                    <button onClick={() => handleAddClass(item)} className="px-3 py-1 mt-5 rounded bg-green-700 hover:opacity-70 font-semibold text-lg text-white" style={{ transition: '.5s' }}>Select</button>}
+                                    <button onClick={() => handleAddClass(item)} className="px-3 py-1 mt-5 rounded bg-green-700 hover:opacity-70 font-semibold text-lg text-white" style={{ transition: '.5s' }} 
+                                    >Select</button>}
                                 </div>
                             </div>
         </div>
