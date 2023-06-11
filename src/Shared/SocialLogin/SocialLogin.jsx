@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/Authprovider";
 import { useLocation, useNavigate } from "react-router-dom";
 import google from '../../assets/google-logo.png'
+import Swal from "sweetalert2";
 
 
 const SocialLogin = () => {
@@ -27,7 +28,7 @@ const SocialLogin = () => {
                 })
                     .then(res => res.json())
                     .then(() => {
-                        navigate(from, { replace: true });
+                        navigate(from, { replace: true })
                     })
             })
     }

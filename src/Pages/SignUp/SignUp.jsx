@@ -43,6 +43,7 @@ const SignUp = () => {
                                             popup: 'animate__animated animate__fadeOutUp'
                                         }
                                     })
+                                    
                                     navigate('/login')
                                 }
                             })
