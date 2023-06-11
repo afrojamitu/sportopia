@@ -35,7 +35,7 @@ const SignUp = () => {
                                 if (data.insertedId) {
                                     reset();
                                     Swal.fire({
-                                        title: 'User Information Updated Successfully.',
+                                        title: 'User Created Successfully.',
                                         showClass: {
                                             popup: 'animate__animated animate__fadeInDown'
                                         },

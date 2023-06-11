@@ -3,9 +3,12 @@ import { NavLink, Outlet } from 'react-router-dom';
 import useSelectedClass from '../hooks/useSelectedClass';
 import { FaBars, FaBookmark, FaChalkboard, FaChalkboardTeacher, FaCheckCircle, FaHome, FaMoneyCheck, FaShoppingCart, FaUsers } from 'react-icons/fa';
 import Header from '../Shared/Header';
+import { useContext } from 'react';
+import { AuthContext } from '../Provider/Authprovider';
 
 const Dashboard = () => {
     const [selectedClass] = useSelectedClass()
+    const {user} = useContext(AuthContext);
 
     // TODO: check users if they are admin or not.
     const isAdmin = true;
@@ -25,7 +28,7 @@ const Dashboard = () => {
                 <ul className="menu p-4 text-lg font-semibold w-80 h-[100vh] bg-[#44b066] ">
                     {/* Sidebar content here */}
                     {
-                        isAdmin ? <>
+                        user.role === 'admin' ? <>
                             <li><NavLink to='/dashboard/adminhome'><FaHome/> Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher/> Manage Classes</NavLink></li>
                             <li><NavLink to='/dashboard/allusers'><FaUsers/> Manage Users</NavLink></li>
@@ -33,9 +36,8 @@ const Dashboard = () => {
                             <>
                                 {/* <span><img className='mt-10' src="../assets/logo.png" alt="" /></span> */}
                                 <li><NavLink to='/dashboard/userhome'><FaHome /> User Home</NavLink></li>
-                                <li><NavLink to='/dashboard/myclasses'><FaShoppingCart /> My Cart</NavLink>
+                                <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
                                 </li>
-                                <li><NavLink to='/dashboard/reservation'><FaBookmark /> My Selected Classes</NavLink></li>
                                 <li><NavLink to='/dashboard/reservation'><FaCheckCircle /> My Enrolled Classes</NavLink></li>
                                 <li><NavLink to='/dashboard/payment'><FaMoneyCheck /> Payment History</NavLink></li>
                             </>
