@@ -62,8 +62,7 @@ const MyClasses = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            selectedClass.map((S_Class, index) => <>
-                                <tr>
+                            selectedClass.map((S_Class, index) => <tr key={S_Class._id}>
                                     <th>{index + 1}</th>
                                     <td>
                                         <div className="flex items-center space-x-3">
@@ -85,7 +84,7 @@ const MyClasses = () => {
                                         <button onClick={() => handleDelete(S_Class)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
                                     </th>
                                 </tr>
-                            </>)
+                            )
                         }
                     </tbody>
 

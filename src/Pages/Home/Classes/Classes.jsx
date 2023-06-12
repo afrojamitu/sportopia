@@ -14,7 +14,7 @@ const Classes = () => {
             <div className='grid md:grid-cols-3 gap-5 md:gap-10 justify-center items-center my-8'>
                 {
                     classes.slice(0, 6).map(sport => <>
-                        <div className={ sport.seats === 0 ? 'bg-red-600 rounded-lg text-white flex flex-col items-center border-2 pb-5 hover:scale-105' : 'bg-bage-100 flex flex-col items-center rounded-lg border-2 pb-5 hover:scale-105'} style={{ transition: '0.5s' }}
+                        <div key={sport._id} className={ sport.seats === 0 ? 'bg-red-600 rounded-lg text-white flex flex-col items-center border-2 pb-5 hover:scale-105' : 'bg-bage-100 flex flex-col items-center rounded-lg border-2 pb-5 hover:scale-105'} style={{ transition: '0.5s' }}
                         >
                             <img className='w-full h-48 rounded-t-lg' src={sport.banner} alt="" />
                             <div className='p-3'>

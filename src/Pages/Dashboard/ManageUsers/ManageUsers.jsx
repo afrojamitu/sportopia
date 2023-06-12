@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
+import { FaChalkboardTeacher, FaTrashAlt, FaUserShield, FaUsers } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
@@ -21,6 +21,43 @@ const ManageUsers = () => {
                     position: 'top-end',
                     icon: 'success',
                     title: `${user.name} is an Admin now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  refetch()
+            }
+        })
+    }
+    const handleInstructor = user =>{
+        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.modifiedCount){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Instructor now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  refetch()
+            }
+        })
+    }
+
+    const handleStudent = user =>{
+        fetch(`http://localhost:5000/users/student/${user._id}`, {
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.modifiedCount){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: `${user.name} is an Student!`,
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -63,8 +100,13 @@ const ManageUsers = () => {
                                         {
                                             user.role === 'admin' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaUserShield/></button> : <button onClick={() => handleAdmin(user)} className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Admin</button>
                                         }
-                                        <button to='/dashboard/payment' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Instructor</button>
-                                        <button to='/dashboard/payment' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Student</button>
+                                        {  user.role === 'instructor' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaChalkboardTeacher/></button> :
+                                            <button onClick={() => handleInstructor(user)} to='/dashboard/payment' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Instructor</button>
+                                        }
+
+                                        { user.role === 'student' ? <button className="px-3 py-1 rounded bg-slate-500 text-lg flex justify-center text-white" disabled style={{ transition: '.5s' }}><FaUsers/></button> : 
+                                            <button onClick={() => handleStudent(user)} className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}>Student</button>
+                                            }
                                     </th>
                                     <th className='text-end'>
                                         <button onClick={() => handleDelete(user)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
