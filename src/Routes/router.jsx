@@ -6,11 +6,13 @@ import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
 import AllClasses from "../Pages/AllClasses/AllClasses";
 import Instructor from "../Pages/Instructor/Instructor";
-import MyClasses from "../Pages/Dashboard/MyClass/MyClasses";
 import Dashboard from "../Layout/Dashboard";
 import PrivateRoute from "./PrivateRoute";
-import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
-import EnrolledClasses from "../Pages/Dashboard/EnrolledClasses/EnrolledClasses";
+import MyClasses from "../Pages/Dashboard/Student/MyClass/MyClasses";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import EnrolledClasses from "../Pages/Dashboard/Student/EnrolledClasses/EnrolledClasses";
+import Payment from "../Pages/Dashboard/Student/Payment/Payment";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -53,14 +55,14 @@ const router = createBrowserRouter([
       },
       {
         path: 'payment',
-        element: <MyClasses></MyClasses>
+        element: <Payment></Payment>
       },
       {
         path: 'allusers',
-        element: <ManageUsers></ManageUsers>
+        element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
       },
       {
-        path: 'enrolledstudents',
+        path: 'enrolledclasses',
         element: <EnrolledClasses></EnrolledClasses>
       }
     ]

@@ -90,8 +90,7 @@ const ManageUsers = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            users.map((user, index) => <>
-                                <tr key={user._id}>
+                            users.map((user, index) => <tr key={user._id}>
                                     <th>{index + 1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
@@ -112,7 +111,7 @@ const ManageUsers = () => {
                                         <button onClick={() => handleDelete(user)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
                                     </th>
                                 </tr>
-                            </>)
+                            )
                         }
                     </tbody>
 
