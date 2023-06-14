@@ -51,7 +51,7 @@ const CheckOut = () => {
                     },
                 }}
             />
-            <button type="submit" className='px-3 py-1 rounded bg-green-700 hover:opacity-70 font-bold text-lg text-white mt-5' disabled={!stripe}>
+            <button type="submit" className='px-3 py-1 rounded bg-gray-600 hover:opacity-70 font-bold text-lg text-white mt-5' disabled={!stripe}>
                 Pay
             </button>
            {cardError && <p className="text-red-600">{cardError}</p>}

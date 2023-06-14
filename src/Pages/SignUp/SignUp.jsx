@@ -96,7 +96,7 @@ const SignUp = () => {
 
 
                         <div>
-                            <input type="submit" value="Sign Up" className='w-full py-2 bg-green-700 hover:opacity-80 rounded font-bold text-white' style={{ transition: '0.5s' }} />
+                            <input type="submit" value="Sign Up" className='w-full py-2 bg-slate-800 hover:opacity-80 rounded font-bold text-white' style={{ transition: '0.5s' }} />
                         </div>
 
                         <p className='text-green-700 text-center'>Already Have an Account? <Link to='/login' className='hover:underline'>Login to Your Account</Link></p>
@@ -107,7 +107,7 @@ const SignUp = () => {
                 </div>
 
                 <div>
-                    <h1 className='text-5xl font-semibold text-green-700 pb-4 text-center'>Welcome To Sportopia!</h1>
+                    <h1 className='text-5xl font-semibold text-slate-800 pb-4 text-center'>Welcome To Sportopia!</h1>
                     <p className='text-center'>We have dedicated teacher with over a decade of experience in the education field. They believes in the power of personalized education, tailoring her lessons to meet the unique needs of each learner.</p>
                     <div className='flex justify-center items-center'>
                     <img className='h-[450px]' src="https://www.sfu.ca/siat/student_projects/iat339/nca5/P2_NootNoot/public_html/Gifs/homepageanimation/homePageAnimation-640px.gif" alt="" />

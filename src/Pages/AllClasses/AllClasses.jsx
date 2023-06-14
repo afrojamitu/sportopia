@@ -3,11 +3,15 @@ import useClass from '../../hooks/useClass';
 import Cover from '../../Shared/Cover/Cover';
 import coverbg from '../../assets/cover1.png'
 import ClassCard from './classCard';
+import { Helmet } from 'react-helmet';
 
 const AllClasses = () => {
     const [classes] = useClass()
     return (
         <div>
+            <Helmet>
+                <title>All Classes - Sportopia Summer Camp</title>
+            </Helmet>
             <Cover
                 image={coverbg} title={'Our Best Courses Here'} subTitle={'Choose Any Class To Spend This Summer vacation With Us!'}
             ></Cover>

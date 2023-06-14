@@ -2,11 +2,15 @@ import React from 'react';
 import useSports from '../../hooks/useSports';
 import Cover from '../../Shared/Cover/Cover';
 import coverbg from '../../assets/cover2.png'
+import { Helmet } from 'react-helmet';
 
 const Instructor = () => {
     const [sports] = useSports()
     return (
         <div>
+            <Helmet>
+                <title>All Instructors - Sportopia Summer Camp</title>
+            </Helmet>
             <Cover
                 image={coverbg} title={'Our Best All Instructors Here'} subTitle={'Dedicated teacher with over a decade of experience in the education field!'}
             ></Cover>

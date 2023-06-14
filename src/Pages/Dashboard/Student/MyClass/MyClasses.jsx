@@ -3,6 +3,7 @@ import useSelectedClass from '../../../../hooks/useSelectedClass';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyClasses = () => {
     const [refetch, selectedClass] = useSelectedClass([])
@@ -40,13 +41,16 @@ const MyClasses = () => {
 
     return (
         <div>
-            <h1 className='text-3xl font-semibold text-green-700 pb-5'>My Selected Classes: {selectedClass.length}</h1>
+            <Helmet>
+                <title>My Selected Classes - Sportopia Summer Camp</title>
+            </Helmet>
+            <h1 className='text-3xl font-semibold text-gray-600 pb-5'>My Selected Classes: {selectedClass.length}</h1>
 
             <div className="overflow-x-auto rounded-t-xl">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='text-lg text-white bg-[#44b066]'>
+                        <tr className='text-lg text-white bg-gray-600'>
                             <th></th>
                             <th>Class</th>
                             <th>Title</th>
@@ -76,7 +80,7 @@ const MyClasses = () => {
                                     <td className='text-end'>$ {cls.price}</td>
                                     <td className='text-end'>{cls.seats}</td>
                                     <th>
-                                        <Link to='/dashboard/payment' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Pay</Link>
+                                        <Link to='/dashboard/payment' className="px-3 py-1 rounded bg-gray-600 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Pay</Link>
                                     </th>
                                     <th className='text-end'>
                                         <button onClick={() => handleDelete(cls)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>

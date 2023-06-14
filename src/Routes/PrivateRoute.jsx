@@ -8,7 +8,9 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return <div className='flex items-cnter justify-center'><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjcyOWZjMGYwZmM4OGVmZTIxNmFmYWYxZGJhZGQyMzBhODQyMmQ0YyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/YOw8mpVUyG8RIyR4uM/giphy.gif" alt="" /></div>
+        return <div className='flex items-cnter justify-center my-52'>
+            <button className="px-3 py-1 rounded bg-gray-600 hover:opacity-70 font-bold text-lg text-white mt-5">Loading...</button>
+        </div>
     }
 
     if(user){

@@ -20,27 +20,26 @@ const Dashboard = () => {
             <div className="drawer-side">
 
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 text-lg font-semibold w-80 h-[100vh] bg-[#44b066] ">
+                <ul className="menu p-4 text-lg font-semibold w-80 h-[100vh] bg-gray-600 text-white">
                     {/* Sidebar content here */}
 
                     {
                         isAdmin.admin ?
                             <>
-                                <li><NavLink to='/dashboard/adminhome'><FaHome /> Admin Home</NavLink></li>
+                                <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>Sporto<span className='text-5xl text-red-600'>P</span>ia</p>
                                 <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
                                 <li><NavLink to='/dashboard/allusers'><FaUsers /> Manage Users</NavLink></li>
                             </>
                             : isInstructor.instructor ?
                                 <>
-                                    <li><NavLink to='/dashboard/instructorhome'><FaHome /> Instructor Home</NavLink></li>
-                                    <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
+                                    <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>Sporto<span className='text-5xl text-red-600'>P</span>ia</p>
+                                    <li><NavLink to='/dashboard/myclass'><FaChalkboardTeacher />My Classes</NavLink>
                                     </li>
-                                    <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
-                                    <li><NavLink to='/dashboard/feedback'><FaPenSquare /> Feedback</NavLink></li>
+                                    <li><NavLink to='/dashboard/enrolledstudent'><FaCheckCircle /> Enrolled students</NavLink></li>
                                 </>
                                 :
                                 <>
-                                    <li><NavLink to='/dashboard/userhome'><FaHome /> Student Home</NavLink></li>
+                                    <p className='text-4xl text-white ps-4 mb-8 border-b-2 pb-3 rounded-lg'>Sporto<span className='text-5xl text-red-600'>P</span>ia</p>
                                     <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
                                     </li>
                                     <li><NavLink to='/dashboard/enrolledclasses'><FaCheckCircle /> My Enrolled Classes</NavLink></li>
