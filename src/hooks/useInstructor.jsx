@@ -9,7 +9,7 @@ const useInstructor = () =>{
         enabled: !!user?.email &&!loading,
         queryFn: async () =>{
             if(user?.email){
-                const res = await fetch(`http://localhost:5000/users/instructor/${user?.email}`)
+                const res = await fetch(`https://sportopia-server.vercel.app/users/instructor/${user?.email}`)
             return res.json()
             }
         },

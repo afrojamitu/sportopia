@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useClass = () => {
     const [classes, setclasses] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://sportopia-server.vercel.app/classes')
             .then(res => res.json())
             .then(data => {
                 setclasses(data)

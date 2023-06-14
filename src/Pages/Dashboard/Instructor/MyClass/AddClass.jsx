@@ -11,7 +11,7 @@ const AddClass = () => {
 
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/addclass', {
+        fetch('https://sportopia-server.vercel.app/addclass', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

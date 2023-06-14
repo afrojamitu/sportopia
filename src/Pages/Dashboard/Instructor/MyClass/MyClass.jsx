@@ -19,7 +19,7 @@ const MyClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/addclass/${cls._id}`, {
+                fetch(`https://sportopia-server.vercel.app/addclass/${cls._id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -83,7 +83,7 @@ const MyClass = () => {
                                     <Link to='/dashboard/update' className="px-3 py-1 rounded bg-gray-600 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Update</Link>
                                 </th>
                                 <th className='text-center'>
-                                    <button onClick={() => handleDelete()} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
+                                    <button onClick={() => handleDelete(cls)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>
                                 </th>
                             </tr>)
                         }

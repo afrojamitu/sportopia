@@ -16,7 +16,7 @@ const ClassCard = ({item}) => {
 
         const bookClass = {classId: _id, className,price, seats, banner, instructor, email: user.email}
         if(user && user.email){
-            fetch('http://localhost:5000/carts',{
+            fetch('https://sportopia-server.vercel.app/carts',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

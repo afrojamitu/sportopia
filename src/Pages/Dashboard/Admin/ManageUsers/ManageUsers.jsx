@@ -7,12 +7,12 @@ import Swal from 'sweetalert2';
 const ManageUsers = () => {
 
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const response = await fetch('http://localhost:5000/users')
+        const response = await fetch('https://sportopia-server.vercel.app/users')
         return response.json()
     })
 
     const handleAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://sportopia-server.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -30,7 +30,7 @@ const ManageUsers = () => {
         })
     }
     const handleInstructor = user =>{
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://sportopia-server.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -40,25 +40,6 @@ const ManageUsers = () => {
                     position: 'top-end',
                     icon: 'success',
                     title: `${user.name} is an Instructor now!`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                  refetch()
-            }
-        })
-    }
-
-    const handleStudent = user =>{
-        fetch(`http://localhost:5000/users/student/${user._id}`, {
-            method: 'PATCH'
-        })
-        .then(res => res.json())
-        .then(data =>{
-            if(data.modifiedCount){
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: `${user.name} is an Student!`,
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -78,7 +59,7 @@ const ManageUsers = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/addclass/${user._id}`, {
+                fetch(`https://sportopia-server.vercel.app/users/${user._id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
