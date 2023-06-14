@@ -73,7 +73,7 @@ const ClassCard = ({item}) => {
                                         {rating}</p>
                                     {seats === 0 ? <button className="px-3 py-1 mt-5 rounded bg-slate-500 font-semibold text-lg" style={{ transition: '.5s' }} disabled>Select</button> :
                                     
-                                    <button onClick={() => handleAddClass(item)} className="px-3 py-1 mt-5 rounded bg-green-700 hover:opacity-70 font-semibold text-lg text-white" style={{ transition: '.5s' }} 
+                                    <button onClick={() => handleAddClass(item)} className="px-3 py-1 mt-5 rounded bg-slate-800 hover:opacity-70 font-semibold text-lg text-white" style={{ transition: '.5s' }} 
                                     >Select</button>}
                                 </div>
                             </div>

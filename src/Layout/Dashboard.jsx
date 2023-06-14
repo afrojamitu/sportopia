@@ -44,42 +44,10 @@ const Dashboard = () => {
                                     <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
                                     </li>
                                     <li><NavLink to='/dashboard/enrolledclasses'><FaCheckCircle /> My Enrolled Classes</NavLink></li>
-                                    <li><NavLink to='/dashboard/payment'><FaMoneyCheck /> Payment History</NavLink></li>
+                                    <li><NavLink to='/dashboard/payment'><FaMoneyCheck /> Payment</NavLink></li>
                                 </>
                     }
-
-                    {/* {
-                        isAdmin.admin ? <>
-                            <li><NavLink to='/dashboard/adminhome'><FaHome /> Admin Home</NavLink></li>
-                            <li><NavLink to='/dashboard/manageclass'><FaChalkboardTeacher /> Manage Classes</NavLink></li>
-                            <li><NavLink to='/dashboard/allusers'><FaUsers /> Manage Users</NavLink></li>
-                        </>
-
-                            : <>
-                                <li><NavLink to='/dashboard/userhome'><FaHome /> Student Home</NavLink></li>
-                                <li><NavLink to='/dashboard/myclasses'><FaBookmark />My Selected Classes</NavLink>
-                                </li>
-                                <li><NavLink to='/dashboard/enrolledclasses'><FaCheckCircle /> My Enrolled Classes</NavLink></li>
-                                <li><NavLink to='/dashboard/payment'><FaMoneyCheck /> Payment History</NavLink></li>
-                            </>
-                    }
-
-                    {isInstructor.instructor &&
-                        <>
-                            <li><NavLink to='/dashboard/instructorhome'><FaHome /> Instructor Home</NavLink></li>
-                            <li><NavLink to='/dashboard/addclass'><FaChalkboardTeacher />My Classes</NavLink>
-                            </li>
-                            <li><NavLink to='/dashboard/enrolledstudents'><FaCheckCircle /> Enrolled students</NavLink></li>
-                            <li><NavLink to='/dashboard/feedback'><FaPenSquare /> Feedback</NavLink></li>
-                        </>
-                    } */}
-
-                    {/* { (!isAdmin.admin || !isInstructor.instructor) ?
-                        
-                        : <></>
-                    } */}
-
-
+                    
                     <li className="divider"></li>
 
                     <li><NavLink to='/'><FaHome /> Home</NavLink></li>

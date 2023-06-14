@@ -42,10 +42,10 @@ const Header = () => {
                     <div className="navbar-end">
                         { 
                         user ? < >
-                        <h1 className="text-xl font-semibold text-green-700 px-4">{user?.displayName}</h1>
-                        <button onClick={handleLogout} className="px-3 py-1 rounded bg-green-700 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>LogOut</button>
+                        <h1 className="text-xl font-semibold text-slate-800 px-4">{user?.displayName}</h1>
+                        <button onClick={handleLogout} className="px-3 py-1 rounded bg-slate-800 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>LogOut</button>
                         </> :
-                            <Link to='/login' className="px-3 py-1 rounded bg-green-700 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>Login</Link>}
+                            <Link to='/login' className="px-3 py-1 rounded bg-slate-800 hover:opacity-70 font-bold text-lg text-white" style={{transition: '.5s'}}>Login</Link>}
                     </div>
                 </div>
             </div>
