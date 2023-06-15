@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const AddClass = () => {
     const { user } = useAuth()
@@ -39,7 +40,9 @@ const AddClass = () => {
     };
     return (
         <div>
-
+            <Helmet>
+                <title>Add Class - Sportopia Instructor</title>
+            </Helmet>
 
             <div className='w-full md:mx-auto mx-5  bg-gray-300 p-12'>
 

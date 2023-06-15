@@ -1,23 +1,24 @@
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import React from 'react';
-import CheckOut from './CheckOut';
-import { Helmet } from 'react-helmet';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckOut from "./CheckOut";
+import useSelectedClass from "../../../../hooks/useSelectedClass";
 
+const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 
-
-const stripePromise = loadStripe('pk_test_51NIje4DB6W9BR5Mapa9PaOwvxTHUQwRdyvBHnAFR5SrpK5FcVc5XUyJ77VMg5FEt0zSSGtVMX703ArlsSxSVg6Zw00427w9SYZ');
 const Payment = () => {
-    return (
-        <div>
-            <Helmet>
-                <title>Payment History - Sportopia Summer Camp</title>
-            </Helmet>
-            <h1 className='text-3xl font-semibold'>Please Process The Payment</h1>
 
+    const [, selectedClass] = useSelectedClass()
+    console.log(selectedClass);
+
+    return (
+        <div >
+            <div className="mt-20">
+                <h2 className="text-3xl font-semibold text-slate-700">Please Proceed Payment </h2>
+            </div>
             <Elements stripe={stripePromise}>
-                <CheckOut />
+                <CheckOut></CheckOut>
             </Elements>
+
         </div>
     );
 };

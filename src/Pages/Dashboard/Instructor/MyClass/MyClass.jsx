@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { FaRegEdit, FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaRegEdit, FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useInstructorClass from '../../../../hooks/useInstructorClass';
 import Swal from 'sweetalert2';
@@ -80,7 +80,7 @@ const MyClass = () => {
                                 <td className=''>$ {cls.price}</td>
                                 <td className='text-center'>{cls.seats}</td>
                                 <th>
-                                    <Link to='/dashboard/update' className="px-3 py-1 rounded bg-gray-600 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}>Update</Link>
+                                    <Link to={`/dashboard/classes/${cls._id}`} className="w-10 h-9 flex justify-center items-center rounded bg-gray-600 hover:opacity-70 text-xl text-white" style={{ transition: '.5s' }}><FaEdit/></Link>
                                 </th>
                                 <th className='text-center'>
                                     <button onClick={() => handleDelete(cls)} className="px-3 py-2 rounded bg-red-700 hover:opacity-70 text-lg text-white" style={{ transition: '.5s' }}><FaTrashAlt /></button>

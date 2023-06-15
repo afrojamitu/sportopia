@@ -17,6 +17,7 @@ import MyClass from "../Pages/Dashboard/Instructor/MyClass/MyClass";
 import EnrolledStudent from "../Pages/Dashboard/Instructor/EnrolledStudent/EnrolledStudent";
 import AddClass from "../Pages/Dashboard/Instructor/MyClass/AddClass";
 import ManageClasses from "../Pages/Dashboard/Admin/ManageClasses/ManageClasses";
+import Update from "../Pages/Dashboard/Instructor/MyClass/Update";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,11 @@ const router = createBrowserRouter([
       {
         path: 'addclass',
         element: <AddClass></AddClass>
+      },
+      {
+        path: 'classes/:id',
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
       },
       {
         path: 'manageclass',
