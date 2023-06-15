@@ -5,8 +5,11 @@ import { useState } from 'react';
 import { AuthContext } from '../../../../Provider/Authprovider';
 import { useContext } from 'react';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import { useParams } from 'react-router-dom';
 
-const CheckOut = ({ classCart, price }) => {
+const CheckOut = () => {
+    const payClass = useParams()
+    const [buyClass, setBuyClass] = useState([])
 
     const stripe = useStripe();
     const elements = useElements();
@@ -16,16 +19,27 @@ const CheckOut = ({ classCart, price }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const [cardError, setCartError] = useState('');
+    
+
+    useEffect(() =>{
+        fetch(`https://sportopia-server.vercel.app/carts/${payClass.id}`)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            setBuyClass(data)
+        })
+    }, [])
 
     useEffect(() => {
-        if (price > 0) {
-            axiosSecure.post('http://localhost:5000/create-payment-intent', { price })
+        if (buyClass.price > 0) {
+            console.log('buyprice', buyClass.price);
+            axiosSecure.post('https://sportopia-server.vercel.app/create-payment-intent', { buyClass  })
                 .then(res => {
-                    console.log(res.data.clientSecret)
+                    console.log('client secret', res.data.clientSecret)
                     setClientSecret(res.data.clientSecret);
                 })
         }
-    }, [price, axiosSecure])
+    }, [buyClass, axiosSecure])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -39,8 +53,8 @@ const CheckOut = ({ classCart, price }) => {
             return
         }
 
-        console.log('card', card);
-        console.log("user", user);
+        // console.log('card', card);
+        // console.log("user", user);
 
         // use your card element with other stripe.js apis 
         const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -49,16 +63,16 @@ const CheckOut = ({ classCart, price }) => {
           });
 
         if (error) {
-            console.log('error', error);
+            // console.log('error', error);
             setCartError(error.message)
         }
         else {
             setCartError('');
-            console.log('payment method', paymentMethod)
+            // console.log('payment method', paymentMethod)
         }
 
         setProcessing(true)
-
+        console.log('payment method', paymentMethod)
         const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -73,7 +87,7 @@ const CheckOut = ({ classCart, price }) => {
         );
 
         if (confirmError) {
-            console.log(confirmError);
+            // console.log(confirmError);
         }
 
         console.log('payment intent', paymentIntent);
@@ -85,24 +99,18 @@ const CheckOut = ({ classCart, price }) => {
 
             // save payment information to the server
             const payment = {
-                email: user?.email,
-                transactionId: paymentIntent.id,
-                price,
-                date: new Date(),
-                quantity: classCart.length,
-                cartItems: classCart.map(item => item._id),
-                status: 'service pending',
-                itemsName: classCart.map(item => item.class_name)
+                id: buyClass.id,
+                transactionId: paymentIntent.id
             }
 
-            axiosSecure.post('/payments', payment)
-            .then(res => {
-                console.log(res.data);
-                if (res.data.insertResult.insertedId) {
-                    // display confirm 
+            // axiosSecure.post('/payments', payment)
+            // .then(res => {
+            //     // console.log(res.data);
+            //     if (res.data.insertResult.insertedId) {
+            //         // display confirm 
 
-                }
-            });
+            //     }
+            // });
 
         }
 
@@ -111,6 +119,9 @@ const CheckOut = ({ classCart, price }) => {
 
     return (
         <>
+            <div>
+                <p className="text-2xl font-semibold">Price: ${buyClass.price}</p>
+            </div>
             <form className="w-2/3 m-8" onSubmit={handleSubmit}>
                 <CardElement
                     options={{

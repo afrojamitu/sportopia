@@ -8,7 +8,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
 
     const [, selectedClass] = useSelectedClass()
-    console.log(selectedClass);
+    // console.log(selectedClass);
 
     return (
         <div >

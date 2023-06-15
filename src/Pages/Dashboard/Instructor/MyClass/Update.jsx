@@ -31,7 +31,7 @@ const Update = () => {
         }
         console.log(updatedData);
 
-        fetch(`http://localhost:5000/classes/${_id}`,{
+        fetch(`https://sportopia-server.vercel.app/classes/${_id}`,{
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

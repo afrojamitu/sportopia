@@ -59,8 +59,9 @@ const router = createBrowserRouter([
         element: <MyClasses></MyClasses>
       },
       {
-        path: 'payment',
-        element: <Payment></Payment>
+        path: 'payment/:id',
+        element: <Payment></Payment>,
+        loader: ({params}) => fetch(`https://sportopia-server.vercel.app/payment/${params.id}`)
       },
       {
         path: 'allusers',
@@ -85,7 +86,7 @@ const router = createBrowserRouter([
       {
         path: 'classes/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
+        loader: ({params}) => fetch(`https://sportopia-server.vercel.app/classes/${params.id}`)
       },
       {
         path: 'manageclass',
