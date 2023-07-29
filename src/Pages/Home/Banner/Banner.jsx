@@ -1,35 +1,17 @@
 import React from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import slider1 from '../../../assets/slider/slider-1.png';
-import slider2 from '../../../assets/slider/slider-2.png';
-import slider3 from '../../../assets/slider/slider-3.png';
-import slider4 from '../../../assets/slider/slider-4.png';
-import slider5 from '../../../assets/slider/slider-5.png';
-import slider6 from '../../../assets/slider/slider-6.png';
 
 const Banner = () => {
     return (
-        <Carousel>
-            <div>
-                <img src={slider1} />
+        <div className='relative'>
+            <img src="https://i.ibb.co/9pj1TGN/baylee-gramling-s08-AMj7-Eja-I-unsplash-2.jpg" alt="" />
+            <div className='text-start text-white font-bold md:w-8/12 md:mx-auto mx-5 space-y-5 absolute top-[40%] left-52'>
+                <h1 className="text-5xl text-start">Explore The Best Summer Camp In City</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium quod quisquam quas voluptatibus, nihil, enim dolore provident quaerat maiores aspernatur dolor illum cupiditate perferendis error inventore odio, consectetur ex commodi reprehenderit itaque beatae officiis tenetur iste accusamus.</p>
+                <div>
+                    <button className='bg-white px-3 py-2 rounded-lg text-black hover:bg-opacity-70' style={{transition: '.4s'}}>Learn More</button>
+                </div>
             </div>
-            <div>
-                <img src={slider2} />
-            </div>
-            <div>
-                <img src={slider3} />
-            </div>
-            <div>
-                <img src={slider4} />
-            </div>
-            <div>
-                <img src={slider5} />
-            </div>
-            <div>
-                <img src={slider6} />
-            </div>
-        </Carousel>
+        </div>
     );
 };
 
